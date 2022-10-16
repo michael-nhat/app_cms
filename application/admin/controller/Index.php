@@ -92,6 +92,10 @@ class Index extends Base
         $this->assign('menus',$menus);
 
         $this->assign('title',lang('admin/index/title'));
+        // echo '<pre>';
+        // var_export($menus);
+        // echo '</pre>';
+        // die();
         return $this->fetch('admin@index/index');
     }
 

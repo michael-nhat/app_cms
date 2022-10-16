@@ -263,7 +263,16 @@
 
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">{:lang('pic')}：</label>
+                    <label class="layui-form-label">{:lang('pic')}：abc </label>
+                    <div class="layui-input-inline w500 upload">{:url('upload/upload')}
+                        <input type="text" class="layui-input upload-input" style="max-width:100%;" value="{$info.vod_pic}" placeholder="" id="vod_pic" name="vod_pic">
+                    </div>
+                    <div class="layui-input-inline ">
+                        <button type="button" class="layui-btn layui-upload" lay-data="{data:{thumb:1,thumb_class:'upload-thumb'}}" id="upload12">{:lang('upload_pic')}</button>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{:lang('pic')}：abc</label>
                     <div class="layui-input-inline w500 upload">
                         <input type="text" class="layui-input upload-input" style="max-width:100%;" value="{$info.vod_pic}" placeholder="" id="vod_pic" name="vod_pic">
                     </div>
@@ -281,7 +290,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">{:lang('pic_slide')}：</label>
+                        <label class="layui-form-label">{:lang('pic_slide')}:</label>
                         <div class="layui-input-inline w500 upload">
                             <input type="text" class="layui-input upload-input" style="max-width:100%;" value="{$info.vod_pic_slide}" placeholder="" id="vod_pic_slide" name="vod_pic_slide">
                         </div>
@@ -515,6 +524,9 @@
 
 </div>
 {include file="../../../application/admin/view/public/foot" /}
+<!-- <script type="text/javascript">
+    var www="www";
+</script> -->
 
 <script type="text/javascript">
     ue = editor_getEditor('vod_content');
@@ -522,13 +534,17 @@
     var downer_select='{volist name="downer_list" id="vo"}{if condition="$vo.status eq '1'"}<option value="{$vo.from}">{$vo.show}</option>{/if}{/volist}';
     var server_select='{volist name="server_list" id="vo"}{if condition="$vo.status eq '1'"}<option value="{$vo.from}">{$vo.show}</option>{/if}{/volist}';
     var UPLOAD_IMG_KEY="{$GLOBALS['config']['upload']['img_key']}";UPLOAD_IMG_API="{$GLOBALS['config']['upload']['img_api']}";
-
+    // alert(www);
     layui.use(['form','upload', 'layer'], function () {
         // 操作对象
         var form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery
                 , upload = layui.upload;;
+
+        // layer.msg("wtf");
+        // layer.msg("wtf", {time:3000000});
+        // layer.msg("_____wtf 2____", {time:3000000});
 
         // 验证
         form.verify({
@@ -617,10 +633,12 @@
                     input.siblings('img').attr('src', res.data.file).show();
                 }
                 input.val(res.data.file);
+                // alert("abc");
 
                 if(res.data.thumb_class !=''){
                     $('.'+ res.data.thumb_class).val(res.data.thumb[0].file);
                 }
+                alert("abc");
             }
         });
         upload.render({

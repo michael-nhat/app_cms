@@ -35,6 +35,8 @@ if (!@mb_check_encoding($_SERVER['PATH_INFO'], 'utf-8')){
     $_SERVER['PATH_INFO']=@mb_convert_encoding($_SERVER['PATH_INFO'], 'UTF-8', 'GBK');
 }
 
+// Echo ini_get ("upload_max_filesize");
+// die("dsf");
 // 加载框架引导文件
 require __DIR__ . '/thinkphp/start.php';
 
