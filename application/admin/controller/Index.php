@@ -31,9 +31,11 @@ class Index extends Base
 
     public function index()
     {
+        // die();
         $menus = @include MAC_ADMIN_COMM . 'auth.php';
 
         foreach($menus as $k1=>$v1){
+            // echo($k1.'vvv'.$v1);
             foreach($v1['sub'] as $k2=>$v2){
                 if($v2['show'] == 1) {
                     if(strpos($v2['action'],'javascript')!==false){
@@ -64,6 +66,7 @@ class Index extends Base
         $quickmenu = config('quickmenu');
         if(empty($quickmenu)){
             $quickmenu = mac_read_file( APP_PATH.'data/config/quickmenu.txt');
+            die($quickmenu);
             $quickmenu = explode(chr(13),$quickmenu);
         }
         if(!empty($quickmenu)){

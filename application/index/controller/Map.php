@@ -11,7 +11,9 @@ class Map extends Base
 
     public function index()
     {
+        // die();
         return $this->label_fetch('map/index');
     }
 
 }
+

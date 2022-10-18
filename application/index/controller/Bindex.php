@@ -1,7 +1,8 @@
 <?php
 namespace app\index\controller;
 
-class Index extends Base
+// html with boostrap index
+class Bindex extends Base
 {
     public function __construct()
     {
@@ -10,13 +11,14 @@ class Index extends Base
 
     public function index()
     {
+        // die();
         $this->assign('version',['code' => "custom version"]);
-        return $this->label_fetch('index/index');
+        return $this->label_fetch('bindex/bindex');
     }
 
     public function index2()
     {
-        $this->assign('version',['code' => "custom version"]);
+        $this->assign('version',['code' => "custom version2"]);
         return $this->label_fetch('index/index2');
     }
 }

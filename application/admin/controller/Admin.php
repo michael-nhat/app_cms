@@ -11,6 +11,7 @@ class Admin extends Base
 
     public function index()
     {
+        // die();
         $param = input();
         $param['page'] = intval($param['page']) <1 ? 1 : $param['page'];
         $param['limit'] = intval($param['limit']) <1 ? $this->_pagesize : $param['limit'];
