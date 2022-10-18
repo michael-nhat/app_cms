@@ -3,14 +3,50 @@
 <head>
     <meta charset="utf-8">
     <title> new webfilm 功能模块及系统标签等等介绍 - 苹果CMS</title>
+
+    <link rel="stylesheet" href="{$maccms.path_tpl}/html/public/static/layui/layui/css/layui.css" type="text/css" />
     <link rel="stylesheet" href="{$maccms.path_tpl}/html/public/static/css/style.css" type="text/css" />
     <!-- <link rel="shortcut icon" href="#"> -->
+
 </head>
 <body>
     <!-- header -->
     {include file="blocks/top"}
     <!-- first block -->
-    vi me anh bat chia tay
 
+    <table class="layui-table" >
+        <tbody>
+        <tr>
+            <td width="110">{:lang('admin/index/welcome/filed_os')}</td>
+            <td><?php echo PHP_OS ?> (<?php echo $_SERVER['SERVER_SOFTWARE'] ?>)</td>
+        </tr>
+        <tr>
+            <td>{:lang('admin/index/welcome/filed_host')}</td>
+            <td><?php echo $_SERVER['HTTP_HOST'] ?></td>
+        </tr>
+        <tr>
+            <td>{:lang('admin/index/welcome/filed_max_upload')}</td>
+            <td><?php echo get_cfg_var("file_uploads") ? get_cfg_var("upload_max_filesize") : $error;?></td>
+        </tr>
+        <tr>
+            <td>{:lang('admin/index/welcome/filed_date')}</td>
+            <td><?php echo date('Y-m-d'); ?></td>
+        </tr>
+         <tr>
+            <td>{:lang('admin/index/welcome/filed_php_ver')}</td>
+            <td><?php echo PHP_VERSION ?></td>
+        </tr>
+        <tr>
+            <td>{:lang('admin/index/welcome/filed_thinkphp_ver')}</td>
+            <td><?php echo THINK_VERSION; ?></td>
+        </tr>
+        <tr>
+            <td>{:lang('admin/index/welcome/filed_ver')}</td>
+            <td><span class="layui-badge">{$version.code}</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    
 </body>
 </html>

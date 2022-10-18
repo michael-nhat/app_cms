@@ -10,7 +10,7 @@ class Index extends Base
 
     public function index()
     {
-        
+        $this->assign('version',['code' => "custom version"]);
         return $this->label_fetch('index/index');
     }
 

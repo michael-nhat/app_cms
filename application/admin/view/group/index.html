@@ -36,6 +36,7 @@
                 <td>{$vo.group_id}</td>
                 <td>{$vo.group_name|htmlspecialchars}</td>
                 <td>
+                    <!-- wtf -->
                     {if condition="$vo['group_id'] gt 2"}
                     <input type="checkbox" name="status" {if condition="$vo['group_status'] eq 1"}checked{/if} value="{$vo['group_status']}" lay-skin="switch" lay-filter="switchStatus" lay-text="{:lang('open')}|{:lang('close')}" data-href="{:url('field?col=group_status&ids='.$vo['group_id'])}">
                     {/if}

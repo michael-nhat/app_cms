@@ -88,6 +88,11 @@ class Group extends Base
     public function field()
     {
         $param = input();
+        // echo '<pre>';
+        // var_dump($param);
+        // echo '</pre>';
+        // die();
+        // pretty hard for debug because it don't follow rule and don't often don't print many thing
         $ids = $param['ids'];
         $col = $param['col'];
         $val = $param['val'];
@@ -104,6 +109,5 @@ class Group extends Base
         }
         return $this->error(lang('param_err'));
     }
-
 
 }
