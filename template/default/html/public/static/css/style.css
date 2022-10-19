@@ -1,5 +1,12 @@
+* {
+}
+
 body {
   display: block;
+}
+
+.sui-left-col {
+  margin-top: 10px;
 }
 /* header */
 .header {
@@ -37,6 +44,8 @@ body {
 .heart-table {
   display: table;
   border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
 }
 
 /* .heart-table */
@@ -76,7 +85,7 @@ body {
 /* top-ten */
 
 .blk-top-ten {
-  background-color: pink;
+  /* background-color: pink; */
 }
 .blk-top-ten .list-movies {
   display: flex;
@@ -86,16 +95,18 @@ body {
 .blk-top-ten .list-movies li {
   width: 100%;
   height: 200px;
+  padding: 0px 10px 10px;
+}
+
+.blk-top-ten .list-movies li .wrap-item-movie {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
 .blk-top-ten .list-movies li a {
   display: block;
-  height: 100%;
-}
-
-.blk-top-ten .list-movies li a {
-  display: block;
+  width: 90%;
   height: 100%;
 }
 
@@ -108,6 +119,57 @@ body {
 
 .blk-top-ten .list-movies li .item-movie-descibe {
   position: absolute;
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
+}
+
+/* new film */
+.new-movies-blk {
+  display: block;
+}
+
+.new-movies-blk .list-movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-movies-blk .list-movies li {
+  width: 25%;
+  /* background-color: red; */
+}
+
+.new-movies-blk .list-movies li .wrap-item-movie {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  /* height: 60px !important; */
+  /* width: 40px !important; */
+}
+
+.new-movies-blk .list-movies li .item-movie-descibe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sui-right-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sui-right-wrap .new-movies-blk {
+  width: 100%;
+}
+
+.new-movies-blk .list-movies li a {
+  display: block;
+  /* width: 90%; */
+  height: 100%;
+}
+
+.new-movies-blk .list-movies li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

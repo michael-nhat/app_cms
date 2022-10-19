@@ -25,27 +25,21 @@
     </style>
   </head>
   <body>
-    <!-- header -->
     {include file="blocks/top"}
-    <!-- first block -->
- 
-    <!-- slide, swiper-block here -->
 
-    
-
-    <div class="first-blk layui-container layui-row">
-      {include file="blocks/heart-table"}
-
-      {include file="blocks/top-ten"}
+    <div class="first-blk layui-container layui-row sui-right-col">
+      <div class="layui-col-lg10">
+        <div class="sui-right-wrap">
+          {include file="blocks/heart-table"}
+          <!-- slide, swiper-block here -->
+          {include file="blocks/new-movies"}
+        </div>
+      </div>
+      <div class="layui-col-lg2 sui-left-col">
+        {include file="blocks/top-ten"}
+      </div>
     </div>
 
-    <div class="first-blk layui-container layui-row">
-      {include file="blocks/heart-table"}
-
-      {include file="blocks/top-ten"}
-    </div>
-
-    
     <script src="{$maccms.path_tpl}html/public/static/js/main.js"></script>
     <script src="{$maccms.path_tpl}html/public/static/js/jquery2.js"></script>
     <script src="{$maccms.path_tpl}html/public/static/layui/layui/layui.js"></script>

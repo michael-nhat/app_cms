@@ -2,8 +2,7 @@ thinkphp with template
 
 done:
  - devide block
- - 
+ - 2 column layout
 todo:
- - 2 column layou
- - top 10 block
- - 
+ - devide 2 column
+ - top 10 block more pretty
