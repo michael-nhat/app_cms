@@ -6,7 +6,7 @@
 
     <link
       rel="stylesheet"
-      href="{$maccms.path_tpl}html/public/static/layui/layui/css/layui.css"
+      href="{$maccms.path_tpl}html/public/static/bootstrap/bootstrap-4/css/bootstrap.css"
       type="text/css"
     />
     <link
@@ -30,6 +30,21 @@
     <!-- header -->
     {include file="blocks/top"}
     <!-- first block -->
-    abc
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+      </div>
+    </nav>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+      </div>
+    </nav>
+
+    <script src="{$maccms.path_tpl}html/public/static/js/jquery2.js"></script>
+    <script src="{$maccms.path_tpl}html/public/static/bootstrap/bootstrap-4/js/bootstrap.bundle.js"></script>
   </body>
 </html>
