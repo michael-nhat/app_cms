@@ -177,3 +177,14 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* slider swiperjs */
+
+.popular--slides {
+  height: 600px;
+}
+
+.popular--slides .swiper {
+  width: 100%;
+  height: 100%;
+}
