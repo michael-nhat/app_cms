@@ -6,6 +6,10 @@
 
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="{$maccms.path_tpl}html/public/static/layui/layui/css/layui.css"
       type="text/css"
     />
@@ -30,9 +34,8 @@
     <div class="first-blk layui-container layui-row sui-right-col">
       <div class="layui-col-lg10">
         <div class="sui-right-wrap">
-          {include file="blocks/heart-table"}
-          <!-- slide, swiper-block here -->
-          {include file="blocks/new-movies"}
+          {include file="blocks/popular--slides"} {include
+          file="blocks/new-movies"} {include file="blocks/heart-table"}
         </div>
       </div>
       <div class="layui-col-lg2 sui-left-col">
