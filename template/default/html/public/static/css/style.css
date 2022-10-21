@@ -94,32 +94,32 @@ body {
   flex-direction: column;
 }
 
-.blk-top-ten .list-movies li {
+.blk-top-ten .list-movies .list-top-movie-item {
   width: 100%;
   height: 200px;
   padding: 0px 10px 10px;
 }
 
-.blk-top-ten .list-movies li .wrap-item-movie {
+.blk-top-ten .list-movies .list-top-movie-item .wrap-item-movie {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.blk-top-ten .list-movies li a {
+.blk-top-ten .list-movies .list-top-movie-item a {
   display: block;
   width: 90%;
   height: 100%;
 }
 
-.blk-top-ten .list-movies li a img {
+.blk-top-ten .list-movies .list-top-movie-item a img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.blk-top-ten .list-movies li .item-movie-descibe {
+.blk-top-ten .list-movies .list-top-movie-item .item-movie-descibe {
   position: absolute;
   top: 0;
   left: 0;
@@ -132,63 +132,41 @@ body {
 
 .new-movies-blk .list-movies {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.new-movies-blk .list-movies li {
-  width: 25%;
-  /* background-color: red; */
-  /* padding: 10px 10px 0 0; */
+.new-movies-blk .list-movies .items-4-block {
+  display: flex;
 }
 
-.new-movies-blk .list-movies li.left-most{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item {
   /* width: 25%; */
-  /* background-color: red; */
-  /* padding: 10px 0 0 0; */
+  margin:10px 10px 0 0;
 }
 
-
-.new-movies-blk .list-movies li.left-most .wrap-item-movie{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item.right-most {
   /* width: 25%; */
-  /* background-color: red; */
-  padding: 10px 0px 0 0;
+  margin:10px 0px 0 0;
 }
 
-.new-movies-blk .list-movies li .wrap-item-movie {
-  /* width: 100%;
-  height: 100%; */
+
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item  .wrap-item-movie{
   position: relative;
-  padding: 10px 10px 0 0;
-  /* height: 60px !important; */
-  /* width: 40px !important; */
 }
-
-.new-movies-blk .list-movies li .item-movie-descibe {
+.new-movies-blk .list-movies .list-top-movie-item .item-movie-descibe {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.sui-right-wrap {
-  display: flex;
-  flex-direction: column;
-}
 
-.sui-right-wrap .new-movies-blk {
-  width: 100%;
-}
-
-.new-movies-blk .list-movies li a {
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item  a{
   display: block;
-  /* width: 90%; */
-  height: 100%;
 }
-
-.new-movies-blk .list-movies li a img {
-  display: block;
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item  img{
+  contain: content;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 /* slider swiperjs */
