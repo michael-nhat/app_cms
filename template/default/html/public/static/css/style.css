@@ -2,9 +2,9 @@ body {
   display: block;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .sui-left-col {
   margin-top: 10px;
@@ -138,14 +138,27 @@ body {
 .new-movies-blk .list-movies li {
   width: 25%;
   /* background-color: red; */
-  padding: 10px 10px 0 0;
+  /* padding: 10px 10px 0 0; */
+}
+
+.new-movies-blk .list-movies li.left-most{
+  /* width: 25%; */
+  /* background-color: red; */
+  /* padding: 10px 0 0 0; */
+}
+
+
+.new-movies-blk .list-movies li.left-most .wrap-item-movie{
+  /* width: 25%; */
+  /* background-color: red; */
+  padding: 10px 0px 0 0;
 }
 
 .new-movies-blk .list-movies li .wrap-item-movie {
   /* width: 100%;
   height: 100%; */
   position: relative;
-  /* padding: 10px 10px 0 0; */
+  padding: 10px 10px 0 0;
   /* height: 60px !important; */
   /* width: 40px !important; */
 }
