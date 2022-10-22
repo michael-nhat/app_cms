@@ -7,6 +7,10 @@ body {
   box-sizing: border-box;
 } */
 
+.layui-container{
+  background: #2f3442;
+}
+
 .sui-left-col {
   margin-top: 10px;
 }
@@ -86,10 +90,6 @@ body {
 }
 
 /* top-ten */
-
-.blk-top-ten {
-  /* background-color: pink; */
-}
 .blk-top-ten .list-movies {
   display: flex;
   flex-direction: column;
@@ -107,13 +107,13 @@ body {
   position: relative;
 }
 
-.blk-top-ten .list-movies .list-top-movie-item a {
+.blk-top-ten .list-movies .list-top-movie-item .movie-link {
   display: block;
   width: 90%;
   height: 100%;
 }
 
-.blk-top-ten .list-movies .list-top-movie-item a img {
+.blk-top-ten .list-movies .list-top-movie-item .movie-link .movie-poster {
   display: block;
   width: 100%;
   height: 100%;
@@ -142,12 +142,10 @@ body {
 }
 
 .new-movies-blk .list-movies .items-4-block .list-top-movie-item {
-  /* width: 25%; */
   margin:10px 10px 0 0;
 }
 
 .new-movies-blk .list-movies .items-4-block .list-top-movie-item.right-most {
-  /* width: 25%; */
   margin:10px 0px 0 0;
 }
 
@@ -162,10 +160,10 @@ body {
 }
 
 
-.new-movies-blk .list-movies .items-4-block .list-top-movie-item  a{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-link{
   display: block;
 }
-.new-movies-blk .list-movies .items-4-block .list-top-movie-item  img{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-poster{
   contain: content;
   width: 100%;
   height: 100%;
@@ -192,12 +190,13 @@ body {
   height: 100%;
 }
 
-.popular--slides .list-top-movie-item  a{
+.popular--slides .list-top-movie-item .movie-link{
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
-.popular--slides .list-top-movie-item  img{
+.popular--slides .list-top-movie-item .movie-poster{
   contain: content;
 }
+
