@@ -6,7 +6,9 @@ done:
  - infinite slider
  - make 4x3 more align (space between blocks) (refactor layout, devide block)
  - top 10 block more pretty
+  - css more reasonable of img, a in movie-list-item
 todo:
  - add css for text title of block
- - css more reasonable of img, a in movie-list-item
+ - more decoration for these titles
+
 
