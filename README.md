@@ -10,5 +10,6 @@ done:
 todo:
  - add css for text title of block
  - more decoration for these titles
+ - more basic responsive for device screen
 
 
