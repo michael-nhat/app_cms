@@ -8,8 +8,10 @@ thinkphp with template
  - top 10 block more pretty
   - css more reasonable of img, a in movie-list-item
 ##### todo:
- - add css for text title of block
+ - add css for text title of block, more real
  - more decoration for these titles
  - more basic responsive for device screen
+ - auto slide poster
+ - think template refactor
 
 

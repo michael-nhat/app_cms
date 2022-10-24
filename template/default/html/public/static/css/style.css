@@ -7,7 +7,7 @@ body {
   box-sizing: border-box;
 } */
 
-.layui-container{
+.layui-container {
   background: #2f3442;
 }
 
@@ -90,6 +90,11 @@ body {
 }
 
 /* top-ten */
+.blk-top-ten .title-top {
+  margin: 0 0 10px 10px;
+  color: rgb(190, 146, 1);
+}
+
 .blk-top-ten .list-movies {
   display: flex;
   flex-direction: column;
@@ -142,15 +147,18 @@ body {
 }
 
 .new-movies-blk .list-movies .items-4-block .list-top-movie-item {
-  margin:10px 10px 0 0;
+  margin: 10px 10px 0 0;
 }
 
 .new-movies-blk .list-movies .items-4-block .list-top-movie-item.right-most {
-  margin:10px 0px 0 0;
+  margin: 10px 0px 0 0;
 }
 
-
-.new-movies-blk .list-movies .items-4-block .list-top-movie-item  .wrap-item-movie{
+.new-movies-blk
+  .list-movies
+  .items-4-block
+  .list-top-movie-item
+  .wrap-item-movie {
   position: relative;
 }
 .new-movies-blk .list-movies .list-top-movie-item .item-movie-descibe {
@@ -159,11 +167,10 @@ body {
   left: 0;
 }
 
-
-.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-link{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-link {
   display: block;
 }
-.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-poster{
+.new-movies-blk .list-movies .items-4-block .list-top-movie-item .movie-poster {
   contain: content;
   width: 100%;
   height: 100%;
@@ -183,20 +190,29 @@ body {
 .popular--slides .list-top-movie-item {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.popular--slides .list-top-movie-item .wrap-item-movie{
+.popular--slides .list-top-movie-item .wrap-item-movie {
   /* width: 100%; */
   height: 100%;
+  width: 450px;
+  position: relative;
 }
 
-.popular--slides .list-top-movie-item .movie-link{
+.popular--slides .list-top-movie-item .movie-link {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
-.popular--slides .list-top-movie-item .movie-poster{
+.popular--slides .list-top-movie-item .movie-poster {
   contain: content;
 }
 
+.popular--slides .list-top-movie-item .item-movie-descibe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
