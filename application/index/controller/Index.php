@@ -10,6 +10,8 @@ class Index extends Base
 
     public function index()
     {
+        require(__DIR__.'/../mock/index.mock.php');
+        $this->assign('topTenMovies',$topTenMovies);
         $this->assign('version',['code' => "custom version"]);
         return $this->label_fetch('index/index');
     }
@@ -20,3 +22,4 @@ class Index extends Base
         return $this->label_fetch('index/index2');
     }
 }
+

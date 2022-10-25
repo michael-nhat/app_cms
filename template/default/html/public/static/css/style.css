@@ -19,6 +19,18 @@ body {
   margin-left: 10px;
 }
 
+.layui-container .logo {
+  color: #72679b;
+  width: 59px;
+  height: 59px;
+  display: flex;
+}
+
+.layui-container .logo i {
+  width: 100%;
+  height: 100%;
+  font-size: 59px;
+}
 /* header */
 .header {
   height: 59px;
