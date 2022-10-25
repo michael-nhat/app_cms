@@ -15,6 +15,10 @@ body {
   margin-top: 10px;
 }
 
+.sui-right-wrap {
+  margin-left: 10px;
+}
+
 /* header */
 .header {
   height: 59px;
@@ -57,12 +61,6 @@ body {
 
 /* .heart-table */
 
-/* .heart-table{ */
-/* width: 800px; */
-/* margin-left: auto;
-    margin-right: auto; */
-/* } */
-
 .heart-table img {
   width: 100%;
   height: 100%;
@@ -92,7 +90,9 @@ body {
 /* top-ten */
 .blk-top-ten .title-top {
   margin: 0 0 10px 10px;
-  color: rgb(190, 146, 1);
+  color: #be9201;
+  padding-bottom: 5px;
+  border-bottom: #be9201 1px solid;
 }
 
 .blk-top-ten .list-movies {
@@ -133,7 +133,14 @@ body {
 
 /* new film */
 .new-movies-blk {
-  display: block;
+  margin-top: 20px;
+}
+
+.new-movies-blk .new-movies-blk--title {
+  color: #be9201;
+  /* font: 30px/40px; */
+  padding-bottom: 5px;
+  border-bottom: #be9201 1px solid;
 }
 
 .new-movies-blk .list-movies {
@@ -215,4 +222,57 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
+}
+
+/* tv series block */
+
+.tv-series-blk{
+  margin-top: 20px;
+}
+
+.tv-series-blk .tv-series-blk--title {
+  color: #be9201;
+  /* font: 30px/40px; */
+  padding-bottom: 5px;
+  border-bottom: #be9201 1px solid;
+}
+
+.tv-series-blk .list-movies {
+  display: flex;
+  flex-direction: column;
+}
+
+.tv-series-blk .list-movies .items-4-block {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.tv-series-blk .list-movies .items-4-block .list-top-movie-item {
+  margin: 10px 10px 0 0;
+}
+
+.tv-series-blk .list-movies .items-4-block .list-top-movie-item.right-most {
+  margin: 10px 0px 0 0;
+}
+
+.tv-series-blk
+  .list-movies
+  .items-4-block
+  .list-top-movie-item
+  .wrap-item-movie {
+  position: relative;
+}
+.tv-series-blk .list-movies .list-top-movie-item .item-movie-descibe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tv-series-blk .list-movies .items-4-block .list-top-movie-item .movie-link {
+  display: block;
+}
+.tv-series-blk .list-movies .items-4-block .list-top-movie-item .movie-poster {
+  contain: content;
+  width: 100%;
+  height: 100%;
 }
