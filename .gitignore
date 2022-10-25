@@ -1,7 +1,7 @@
 .idea
 /.vscode
 *.DS_Store
-/vendor
+
 .env
 .tags*
 .swp
@@ -14,3 +14,4 @@ nohup*
 .well-known
 /upload
 node_modules/
+
