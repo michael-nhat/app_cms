@@ -1,11 +1,17 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666684348;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666622479;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666625110;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666707367;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666706899;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666625110;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>New web for apple CMS 功能模块及系统标签等等介绍 - 苹果CMS</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
@@ -55,6 +61,22 @@
         </div>
       </div>
 
+
+    <script>
+      function openTopMoviesTab(tabName) {
+        switch (tabName) {
+          case "top-month": {
+            var x = document.getElementsByClassName()[0];
+            x.style.display = "none";
+            document.getElementById("top-week").style.display = "block";
+            break;
+          }
+          case "top-week": {
+            break;
+          }
+        }
+      }
+    </script>
 
     <div class="first-blk layui-container layui-row sui-right-col">
       <div class="layui-col-lg10">
@@ -128,8 +150,7 @@
     <div class="swiper-pagination"></div>
   </div>
 </div>
-
-          <div class="new-movies-blk">
+ <div class="new-movies-blk">
   <div class="new-movies-blk--title">
     New movies
   </div>
@@ -272,8 +293,7 @@
     </div>
   </div>
 </div>
-
-          <div class="tv-series-blk">
+ <div class="tv-series-blk">
     <div class="tv-series-blk--title">TV Series</div>
     <div class="list-movies">
       <div class="items-4-block">
@@ -414,80 +434,213 @@
       </div>
     </div>
   </div>
-  
-          
+   
         </div>
       </div>
       <div class="layui-col-lg2 sui-left-col">
         <div class="blk-top-ten">
-  <div class="title-top">Top movies</div>
-
-  <ul class="list-movies">
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-    <li class="list-top-movie-item" id="list-top-movie-item-1">
-      <div class="wrap-item-movie">
-        <a href="#" class="movie-link">
-          <img src="/static/img/top-avatar1.jpg" class="movie-poster" alt="" />
-        </a>
-        <div class="item-movie-descibe">梁a</div>
-      </div>
-    </li>
-  </ul>
+  <div class="title-top">Top of week</div>
+  
+  <div class="top-month">
+    <ul class="list-movies">
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="top-week">
+    <ul class="list-movies">
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+      <li class="list-top-movie-item" id="list-top-movie-item-1">
+        <div class="wrap-item-movie">
+          <a href="#" class="movie-link">
+            <img
+              src="/static/img/top-avatar1.jpg"
+              class="movie-poster"
+              alt=""
+            />
+          </a>
+          <div class="item-movie-descibe">梁a</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
         <div class="hot-tags-blk">Hot tags block</div>

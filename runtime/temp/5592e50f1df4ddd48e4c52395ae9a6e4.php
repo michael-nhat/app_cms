@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:40:"template/default/html/bindex/bindex.html";i:1666107709;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1665240803;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:40:"template/default/html/bindex/bindex.html";i:1666107709;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,7 +29,30 @@
   </head>
   <body>
     <!-- header -->
-    
+        <div class="layui-header header header-index">
+        <div class="layui-container">
+          <a href="#" class="logo"
+            >
+            <!-- <img class="img" src="/static/img/logo-movies.png"/> -->
+            <i class="fa fa-video-camera" aria-hidden="true"></i>
+          </a>
+          <div class="layui-form layui-hide-xs header-search">
+            搜索
+          </div>
+          <ul class="layui-nav" id="LAY_NAV_TOP">
+            <li class="layui-nav-item" data-dir="docs">
+              <a href="/v2/docs/">贤梁</a>
+            </li>
+            <li class="layui-nav-item" data-dir="demo">
+              <a href="/v2/demo/">香蕉</a>
+            </li>
+            <li class="layui-nav-item" data-dir="demo">
+              <a href="/v2/demo/">苹果</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     <!-- first block -->
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
