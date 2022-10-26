@@ -1,42 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>New web for apple CMS 功能模块及系统标签等等介绍 - 苹果CMS</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{$maccms.path_tpl}html/public/static/layui/layui/css/layui.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="{$maccms.path_tpl}html/public/static/css/style.css"
-      type="text/css"
-    />
-    <style>
-      body,
-      div,
-      a,
-      p,
-      span {
-        user-select: text !important;
-      }
-    </style>
+    {include file="blocks/head-tags"}
   </head>
   <body>
-
     {include file="blocks/top"}
 
     <div class="first-blk layui-container layui-row sui-right-col">
@@ -53,45 +20,8 @@
         <div class="statictis-blk">Website statictis block</div>
       </div>
       {include file="blocks/footer"}
-    
-  </div>
+    </div>
 
-
-    <script>
-      function openTopMoviesTab(tabName) {
-        switch (tabName) {
-          case "top-month": {
-            document.getElementsByClassName(tabName)[0].style.display = "none";
-            document.getElementsByClassName("top-week")[0].style.display = "block";
-            break;
-          }
-          case "top-week": {
-            document.getElementsByClassName(tabName)[0].style.display = "none";
-            document.getElementsByClassName("top-month")[0].style.display = "block";
-            break;
-          }
-        }
-      }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-    <script src="{$maccms.path_tpl}html/public/static/js/jquery2.js"></script>
-    <script src="{$maccms.path_tpl}html/public/static/layui/layui/layui.js"></script>
-    <script src="{$maccms.path_tpl}html/public/static/js/main.js"></script>
+    {include file="blocks/script-bottom-body"}
   </body>
 </html>

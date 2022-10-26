@@ -1,43 +1,43 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666774193;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666774314;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:9:{s:38:"template/default/html/index/index.html";i:1666791342;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/head-tags.html";i:1666791231;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666774314;s:79:"/www/wwwroot/maccms10test2/template/default/html/blocks/script-bottom-body.html";i:1666791328;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>New web for apple CMS 功能模块及系统标签等等介绍 - 苹果CMS</title>
+<title>New web for apple CMS 功能模块及系统标签等等介绍 - 苹果CMS</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="<?php echo $maccms['path_tpl']; ?>html/public/static/layui/layui/css/layui.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="<?php echo $maccms['path_tpl']; ?>html/public/static/css/style.css"
-      type="text/css"
-    />
-    <style>
-      body,
-      div,
-      a,
-      p,
-      span {
-        user-select: text !important;
-      }
-    </style>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="<?php echo $maccms['path_tpl']; ?>html/public/static/layui/layui/css/layui.css"
+  type="text/css"
+/>
+<link
+  rel="stylesheet"
+  href="<?php echo $maccms['path_tpl']; ?>html/public/static/css/style.css"
+  type="text/css"
+/>
+<style>
+  body,
+  div,
+  a,
+  p,
+  span {
+    user-select: text !important;
+  }
+</style>
+
   </head>
   <body>
-
         <div class="layui-header header header-index">
         <div class="layui-container">
           <a href="#" class="logo"
@@ -643,45 +643,28 @@
     <div class="logo-class"><?php echo $maccms['site_logo']; ?>aa</div>
     <img src="<?php echo $maccms['site_logo']; ?>" alt="">
 </div>
-    
-  </div>
+    </div>
 
+    <script src="<?php echo $maccms['path_tpl']; ?>html/public/static/js/top-movies-tab.js"></script>
 
-    <script>
-      function openTopMoviesTab(tabName) {
-        switch (tabName) {
-          case "top-month": {
-            document.getElementsByClassName(tabName)[0].style.display = "none";
-            document.getElementsByClassName("top-week")[0].style.display = "block";
-            break;
-          }
-          case "top-week": {
-            document.getElementsByClassName(tabName)[0].style.display = "none";
-            document.getElementsByClassName("top-month")[0].style.display = "block";
-            break;
-          }
-        }
-      }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-    <script src="<?php echo $maccms['path_tpl']; ?>html/public/static/js/jquery2.js"></script>
-    <script src="<?php echo $maccms['path_tpl']; ?>html/public/static/layui/layui/layui.js"></script>
-    <script src="<?php echo $maccms['path_tpl']; ?>html/public/static/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<script src="<?php echo $maccms['path_tpl']; ?>html/public/static/js/jquery2.js"></script>
+<script src="<?php echo $maccms['path_tpl']; ?>html/public/static/layui/layui/layui.js"></script>
+<script src="<?php echo $maccms['path_tpl']; ?>html/public/static/js/main.js"></script>
   </body>
 </html>
