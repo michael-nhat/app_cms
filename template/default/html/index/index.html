@@ -4,7 +4,13 @@
     <meta charset="utf-8" />
     <title>New web for apple CMS 功能模块及系统标签等等介绍 - 苹果CMS</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
@@ -32,13 +38,13 @@
   <body>
     {include file="blocks/top"}
 
+
     <div class="first-blk layui-container layui-row sui-right-col">
       <div class="layui-col-lg10">
         <div class="sui-right-wrap">
-          {include file="blocks/popular--slides"}
-          {include file="blocks/new-movies"}
-          {include file="blocks/tv-series"}
-          {//include file="blocks/heart-table"}
+          {include file="blocks/popular--slides"} {include
+          file="blocks/new-movies"} {include file="blocks/tv-series"} {//include
+          file="blocks/heart-table"}
         </div>
       </div>
       <div class="layui-col-lg2 sui-left-col">
@@ -48,6 +54,24 @@
       </div>
       {include file="blocks/footer"}
     </div>
+
+
+    <script>
+      function openTopMoviesTab(tabName) {
+        switch (tabName) {
+          case "top-month": {
+            document.getElementsByClassName(tabName)[0].style.display = "none";
+            document.getElementsByClassName("top-week")[0].style.display = "block";
+            break;
+          }
+          case "top-week": {
+            document.getElementsByClassName(tabName)[0].style.display = "none";
+            document.getElementsByClassName("top-month")[0].style.display = "block";
+            break;
+          }
+        }
+      }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>

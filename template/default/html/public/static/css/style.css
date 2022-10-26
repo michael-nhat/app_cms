@@ -104,7 +104,11 @@ body {
   margin: 0 0 10px 10px;
   color: #be9201;
   padding-bottom: 5px;
-  border-bottom: #be9201 1px solid;
+  /* border-bottom: #be9201 1px solid; */
+}
+
+.blk-top-ten .wrap-title-top {
+  display: flex;
 }
 
 .blk-top-ten .list-movies {

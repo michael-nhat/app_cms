@@ -11,6 +11,7 @@ thinkphp with template
  - think template refactor
   -- create mock variable
   -- using mock to generate block
+ - tabs for top 10 week/month
  - more basic responsive for device screen (a little)
  - Search block
  - CSS sharing part

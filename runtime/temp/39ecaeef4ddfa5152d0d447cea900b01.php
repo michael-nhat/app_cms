@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666707367;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666706899;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666625110;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666772372;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666625110;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -62,21 +62,6 @@
       </div>
 
 
-    <script>
-      function openTopMoviesTab(tabName) {
-        switch (tabName) {
-          case "top-month": {
-            var x = document.getElementsByClassName()[0];
-            x.style.display = "none";
-            document.getElementById("top-week").style.display = "block";
-            break;
-          }
-          case "top-week": {
-            break;
-          }
-        }
-      }
-    </script>
 
     <div class="first-blk layui-container layui-row sui-right-col">
       <div class="layui-col-lg10">
@@ -439,15 +424,22 @@
       </div>
       <div class="layui-col-lg2 sui-left-col">
         <div class="blk-top-ten">
-  <div class="title-top">Top of week</div>
-  
+  <div class="wrap-title-top">
+    <div class="title-top" onclick="openTopMoviesTab('top-week');">
+      Top of week
+    </div>
+    <div class="title-top" onclick="openTopMoviesTab('top-month');">
+      Top of month
+    </div>
+  </div>
+
   <div class="top-month">
     <ul class="list-movies">
       <li class="list-top-movie-item" id="list-top-movie-item-1">
         <div class="wrap-item-movie">
           <a href="#" class="movie-link">
             <img
-              src="/static/img/top-avatar1.jpg"
+              src="/static/img/top-avatar2.jpg"
               class="movie-poster"
               alt=""
             />
@@ -648,6 +640,24 @@
       </div>
       <div class="footer layui-col-lg12">footer</div>
     </div>
+
+
+    <script>
+      function openTopMoviesTab(tabName) {
+        switch (tabName) {
+          case "top-month": {
+            document.getElementsByClassName(tabName)[0].style.display = "none";
+            document.getElementsByClassName("top-week")[0].style.display = "block";
+            break;
+          }
+          case "top-week": {
+            document.getElementsByClassName(tabName)[0].style.display = "none";
+            document.getElementsByClassName("top-month")[0].style.display = "block";
+            break;
+          }
+        }
+      }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
