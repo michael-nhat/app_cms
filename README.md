@@ -7,11 +7,12 @@ thinkphp with template
  - make 4x3 more align (space between blocks) (refactor layout, devide block)
  - top 10 block more pretty
   - css more reasonable of img, a in movie-list-item
+ - tabs for top 10 week/month
 ##### todo:
  - think template refactor
   -- create mock variable
   -- using mock to generate block
- - tabs for top 10 week/month
+ - add tailwind css route test
  - more basic responsive for device screen (a little)
  - Search block
  - CSS sharing part

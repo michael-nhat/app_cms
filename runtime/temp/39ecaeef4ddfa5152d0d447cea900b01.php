@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666772372;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666625110;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:38:"template/default/html/index/index.html";i:1666774193;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666774314;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,6 +37,7 @@
     </style>
   </head>
   <body>
+
         <div class="layui-header header header-index">
         <div class="layui-container">
           <a href="#" class="logo"
@@ -60,7 +61,6 @@
           </ul>
         </div>
       </div>
-
 
 
     <div class="first-blk layui-container layui-row sui-right-col">
@@ -638,8 +638,13 @@
         <div class="hot-tags-blk">Hot tags block</div>
         <div class="statictis-blk">Website statictis block</div>
       </div>
-      <div class="footer layui-col-lg12">footer</div>
-    </div>
+      <div class="footer layui-col-lg12">footer
+
+    <div class="logo-class"><?php echo $maccms['site_logo']; ?>aa</div>
+    <img src="<?php echo $maccms['site_logo']; ?>" alt="">
+</div>
+    
+  </div>
 
 
     <script>
