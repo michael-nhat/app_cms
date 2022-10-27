@@ -1,0 +1,20 @@
+The v10 version adds multi-language support, which is convenient for more global users to use. All the displayed and prompted information in the system is completely controlled by the language pack.
+The system has built-in Simplified Chinese and Traditional Chinese language packs by default. During installation, you can choose to switch the language you are familiar with to display the corresponding language completely in the installation and background, and all module prompts will also display the corresponding language.
+More language pack extensions will be built-in or provided in the future, and you are welcome to provide them.
+It is recommended not to modify the common language package. If you want to replace the content in the common language package, you can create the content of the same key under the corresponding module language package to automatically load and replace it.
+
+==Language Pack Structure=
+│─application/
+│ ├─lang/ common language package
+│ ├──zh-cn.php Simplified Chinese
+│ ├──zh-tw.php Traditional Chinese
+│──…
+│ ├─admin/lang/ admin module custom language pack
+│ ├──zh-cn.php
+│ ├──zh-tw.php
+│──…
+│ ├─api/lang/ api module custom language pack
+│ ├──zh-cn.php
+│ ├──zh-tw.php
+│──…
+and many more…

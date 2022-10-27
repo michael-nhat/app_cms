@@ -1,0 +1,69 @@
+Scheduled tasks currently have two built-in execution operations: collect resources and generate static
+Enforce the parameter enforce=1
+
+1. Collect resources
+Execution file: select the collection resource library collect
+Additional parameters: Obtain from the custom resource list (collect today, collect this week, collect all, right-click to copy the link) and intercept the parameter part.
+
+E.g:
+Task Name: cj_day
+Task description: Collect the data of the day
+Additional parameters: ac=cjall&h=24&xt=1&ct=&cjflag=b9c546ba925d22ed654927b44638df34&cjurl=http://cj.tv6.com/mox/inc/youku.php
+
+
+2. Generate static
+Execution file: choose to generate make
+Additional parameters:
+
+E.g:
+Generate home page ac=index
+Generate map page ac=map
+generate rss ac=rss
+Generate Baidu sitemap ac=rss&ac2=baidu
+Generate Google sitemap ac=rss&ac2=google
+
+Generate topic homepage ac=topic_index
+Generate topic details page ac=topic_info&topic=1,2,3,4
+
+Generate video classification page ac=type&tab=vod&vodtype=1,2
+Generate video categories with updated data on the day ac=type&tab=vod&ac2=day
+Generate article classification page ac=type&tab=art&arttype=3,4
+Generate article categories with updated data on the day ac=type&tab=art&ac2=day
+
+Generate custom page ac=label&label=rand.html
+
+Generate video details page ac=info&tab=vod&ids=1,2,3
+Generate ungenerated video detail page ac=info&tab=vod&ac2=nomake
+
+Generate article details page ac=info&tab=art&ids=1,2,3
+Generate an article detail page that is not generated ac=info&tab=art&ac2=nomake
+
+
+3. Collection rules
+Execution file: select Collection rule cj
+
+The parameter id=1, the parameter is the ID of the current collection custom collection rule.
+
+In order not to affect server performance, only the first page is currently collected.
+
+
+4. Clear the cache
+Execution file: select clear cache cache
+No parameters required
+
+
+5. URL push
+Execution file: select URL push urlsend
+
+Additional parameters:
+Baidu actively pushes the video of the day ac=Baidu&limit=50&page=1&ac2=today&mid=1
+Baidu actively pushes the article of the day ac=Baidu&limit=50&page=1&ac2=today&mid=2
+Baidu actively pushes the topic of the day ac=Baidu&limit=50&page=1&ac2=today&mid=3
+Baidu proactively pushes the cast of the day ac=Baidu&limit=50&page=1&ac2=today&mid=8
+Baidu actively pushes the role of the day ac=Baidu&limit=50&page=1&ac2=today&mid=9
+
+Baidu fast push video of the day ac=Baidufast&limit=10&page=1&ac2=today&mid=1
+Baidu fast push the article of the day ac=Baidufast&limit=10&page=1&ac2=today&mid=2
+Baidu fast push the topic of the day ac=Baidufast&limit=10&page=1&ac2=today&mid=3
+Baidu Fast Push Actors of the Day ac=Baidufast&limit=10&page=1&ac2=today&mid=8
+Baidu fast push role of the day ac=Baidufast&limit=10&page=1&ac2=today&mid=9

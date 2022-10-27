@@ -1,0 +1,185 @@
+Less than one thousand lt 1000, between one thousand two thousand between 1000, 2000
+The total number of hits is greater than one thousand gt 1000, less than one thousand lt 1000, between one thousand two thousand between 1000, 2000
+Whether paging is paging yes
+pageurl paging address
+cachetime custom cache time unit seconds
+Whether isend is serialized 0,1
+Whether the plot contains the diversity plot 0,1
+
+{maccms:vod num="10" paging="no" type="all" order="asc" by="sort"}
+   The interior is the same as below, and {$obj. can be changed to {$vo.
+{/maccms:vod}
+=======Video content page unique tab =======
+{$obj.vod_id} video id
+{$obj.type_id} category id
+{$obj.type_id_1} first-level classification id
+{$obj.type} classification object, secondary attributes can refer to classification attributes
+{$obj.type.type_name} class name
+{$obj.type.type_en} Classification Pinyin
+{$obj.type_1} The first-level classification object, the second-level attribute can refer to the classification attribute
+{$obj.type_1.type_name} first-level classification name
+{$obj.type_1.type_en} first-level classification pinyin
+{$obj.group_id} user group id
+{$obj.vod_name} video name
+{$obj.vod_sub} subtitle
+{$obj.vod_en} alias
+{$obj.vod_status} Status 0 Unreviewed 1 Reviewed
+{$obj.vod_letter} initials
+{$obj.vod_color} color
+{$obj.vod_tag} tags
+{$obj.vod_class} extended class
+{$obj.vod_pic} image
+{$obj.vod_pic_thumb} Thumbnail
+{$obj.vod_pic_slide} slideshow
+{$obj.vod_pic_screenshot} Take screenshots of multiple pictures with #connect
+{$obj.vod_pic_screenshot_list} screenshot list
+{$obj.vod_actor} starring
+{$obj.vod_director} Director
+{$obj.vod_writer}Writer
+{$obj.vod_behind} behind the scenes
+Introduction to {$obj.vod_blurb}
+{$obj.vod_remarks} remarks
+{$obj.vod_pubdate} release date
+{$obj.vod_total} total number of episodes
+{$obj.vod_serial} serial number
+{$obj.vod_tv} on TV
+{$obj.vod_weekday} program period
+{$obj.vod_area} area
+{$obj.vod_lang} language
+{$obj.vod_year} years
+{$obj.vod_version} version - dvd, hd, 720p
+{$obj.vod_state} resource category - feature film, trailer, tidbits
+{$obj.vod_author} editor
+{$obj.vod_jumpurl} jump url
+{$obj.vod_tpl} standalone template
+{$obj.vod_tpl_play} independent play page template
+{$obj.vod_tpl_down} Standalone download page template
+Is {$obj.vod_isend} complete
+{$obj.vod_lock} lock 1
+{$obj.vod_level} recommended level
+{$obj.vod_points} Points required to access the entire video
+{$obj.vod_points_play} Pay per episode
+{$obj.vod_points_down} Pay per episode download
+{$obj.vod_hits} total hits
+{$obj.vod_hits_day} Hits per day
+{$obj.vod_hits_week} Weekly Hits
+{$obj.vod_hits_month} monthly hits
+{$obj.vod_duration} duration
+{$obj.vod_up} top count
+{$obj.vod_down} Dislikes
+{$obj.vod_score} average score
+{$obj.vod_score_all} total score
+{$obj.vod_score_num} number of scores
+{$obj.vod_time} update time
+{$obj.vod_time_add} add time
+{$obj.vod_time_hits} hit time
+{$obj.vod_time_make} make time
+{$obj.vod_trysee} try time
+{$obj.vod_reurl} source address
+{$obj.vod_rel_vod} associated video ids
+{$obj.vod_rel_art} associated article ids
+{$obj.vod_content} details
+{$obj.vod_pwd} password to access content page
+{$obj.vod_pwd_url} get password link
+{$obj.vod_pwd_play} access play page password
+{$obj.vod_pwd_play_url} get password link
+{$obj.vod_pwd_down} password to access the download page
+{$obj.vod_pwd_down_url} get password link
+{$obj.vod_copyright} whether to enable copyright reminder
+{$obj.vod_play_from} playgroup
+{$obj.vod_play_server} Play server group
+{$obj.vod_play_note} play note
+{$obj.vod_play_url} Play URL
+{$obj.vod_down_from} download rent
+{$obj.vod_down_server} download server group
+{$obj.vod_down_note} download note
+{$obj.vod_down_url} download URL
+Whether {$obj.vod_plot} contains the diversity plot
+{$obj.vod_plot_name} episode plot name
+{$obj.vod_plot_detail} Diversity plot details
+
+
+{:mac_url_vod_detail($obj)} Video detail page link
+{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])} Video play page link
+{:mac_url_vod_play($obj,'first')} The first link of the video playback page
+{:mac_url_vod_down($obj,['sid'=>1,'nid'=>1])} Video download page link
+{:mac_url_vod_down($obj,'first')} The first link of the video download page
+
+
+=======Multiple screenshot capture call examples =======
+{maccms:foreach name="obj.vod_pic_screenshot_list" id="vo"}
+    <img src="{$vo.url}" alt="{$vo.name}" />
+{/maccms:foreach}
+
+=======Video playback address and download address label =======
+
+{maccms:foreach name="obj.vod_play_list" id="vo"}
+<div class="ui-box marg" id="playlist_1">
+    <div class="down-title">
+        <h2>{$vo.from}-play online</h2><span>[{$vo.player_info.tip}]</span>
+    </div>
+    <div class="video_list fn-clear">
+        {maccms:foreach name="vo.urls" id="vo2"}
+        <a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" >{$vo2.name}</a>
+        {/maccms:foreach}
+    </div>
+</div>
+{/maccms:foreach}
+
+
+{maccms:foreach name="obj.vod_down_list" id="vo"}
+<div class="ui-box marg" id="downlist_1">
+    <div class="down-title">
+        <h2>{$vo.from}-download</h2><span>[{$vo.player_info.tip}]</span>
+    </div>
+    <div class="video_list fn-clear">
+        {maccms:foreach name="vo.urls" id="vo2"}
+        <a href="{:mac_url_vod_down($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" >{$vo2.name}</a>
+        {/maccms:foreach}
+    </div>
+</div>
+{/maccms:foreach}
+
+
+How to display only the address of the current group on the play page or download page? The outer loop label remains unchanged, just add a judgment.
+{maccms:foreach name="obj.vod_play_list" id="vo"}
+{if condition="$vo.sid eq $param.sid"} --------------------- The point is this if judgment
+<div class="ui-box marg" id="playlist_1">
+    <div class="down-title">
+        <h2>{$vo.from}-play online</h2><span>[{$vo.player_info.tip}]</span>
+    </div>
+    <div class="video_list fn-clear">
+        {maccms:foreach name="vo.urls" id="vo2"}
+        <a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" >{$vo2.name}</a>
+        {/maccms:foreach}
+    </div>
+</div>
+{/if}
+{/maccms:foreach}
+
+
+In the above loop process, the method to obtain the detailed information of the player is
+{$vo.player_info.from} encoding
+{$vo.player_info.show} name
+{$vo.player_info.des} Remarks
+{$vo.player_info.tip} Tip
+{$vo.player_info.sort} sort
+{$vo.player_info.parse} parsing interface
+{$vo.player_info.target} The current _self and the new page _blank of the target window can be used directly on the target attribute of the a tag
+{$vo.from} player encoding
+{$vo.note} Notes
+{$vo.url} url address
+{$vo.url_count} episode count
+
+
+
+=======Unique tab for video playback page========
+{$param.sid} current playgroup number
+{$param.nid} current episode number
+
+{$obj.player_info.link_next} address of the next page, this link will link the current page when the last page
+{$obj.player_info.link_pre} the address of the previous page, this link will link the current page on the first page
+
+{$obj['vod_play_list'][$param['sid']]} Get the current playgroup data
+{$obj['vod_play_list'][$param['sid']]['player_info']} player info
+{$obj['vod_play_list'][$param['sid']]['server_info']} server group

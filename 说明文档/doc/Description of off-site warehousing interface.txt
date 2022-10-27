@@ -1,0 +1,22 @@
+The off-station warehousing interface is generally a warehousing solution provided to third-party software (such as locomotives, ET, etc.).
+
+Before use, please set the password for free login and storage in the background system - off-site storage configuration, and the classification name corresponds to the system classification rules.
+
+The system default api storage interface file is http://domain name/api.php, and the storage file can be modified as needed.
+
+Download the official Apple CMS-V10 locomotive storage module!
+
+Locomotive configuration
+    Fill in the root address of the website http://domain name/api.php/
+
+    Click Test, enter the verification password, and store the necessary information for testing.
+
+The necessary information for the interface is:
+    Name, Category ID or Category Name (if both exist, Category ID shall prevail)
+
+Inbound interface address
+video/api.php/receive/vod;
+article/api.php/receive/art;
+actor/api.php/receive/actor;
+roles/api.php/receive/role;
+url/api.php/receive/website;

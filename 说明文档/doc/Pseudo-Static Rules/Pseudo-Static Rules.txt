@@ -1,0 +1,18 @@
+1. Confirm that the space supports the rewrite component.
+2. Follow the instructions in the pseudo-static rewrite directory.
+3. Set the browsing mode to rewrite pseudo-static in the background.
+
+
+If you use the rewrite pseudo-static mode, please note that the configuration file is copied to the website root directory.
+If the static file suffix configuration is not html, please replace .html in the rewrite configuration file with the corresponding suffix such as .html
+
+Use httpd.ini under iis6.x
+
+Use web.config under iis7.x
+
+Use .htaccess under apache
+(Edit the .htaccess file and change RewriteBase /maccms10 to the directory where your Apple CMS is located)
+
+Use maccms.conf under nginx
+(If you use vps or server, you can use include xxxxx.conf in your host's conf, which is to include the pseudo-static rule file
+If you use the virtual host version of nginx, just ask your host company to add rules for you, and you send the rules to him. )

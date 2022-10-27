@@ -1,0 +1,62 @@
+The api interface is only for providing data
+
+The video interface also supports the data in the boss xml format, just add the parameter &at=xml.
+
+1, the video part
+List http://domain/api.php/provide/vod/?ac=list
+Details http://domain/api.php/provide/vod/?ac=detail
+Also supports data in boss xml format
+list api.php/provide/vod/at/xml/?ac=list
+detailsapi.php/provide/vod/at/xml/?ac=detail
+
+2, the article part
+List http://domain/api.php/provide/art/?ac=list
+Detailshttp://domain/api.php/provide/art/?ac=detail
+
+3, the actor part
+List http://domain/api.php/provide/actor/?ac=list
+Detailshttp://domain/api.php/provide/actor/?ac=detail
+
+4, the role part
+List http://domain/api.php/provide/role/?ac=list
+Detailshttp://domain/api.php/provide/role/?ac=detail
+
+5, the URL part
+List http://domain/api.php/provide/website/?ac=list
+Detailshttp://domain/api.php/provide/website/?ac=detail
+
+List data format:
+
+{"code":1,"msg":"Data list","page":1,"pagecount":1,"limit":"20","total":15,"list":[{"vod_id ":21,"vod_name":"Test 1","type_id":6,"type_name":"Subclass 1","vod_en":"qingjian","vod_time":"2018-03-29 20:50 :19","vod_remarks":"Ultra Clear","vod_play_from":"youku"},{"vod_id":20,"vod_name":"Test 2","type_id":6,"type_name":"Sub Class 1","vod_en":"baolijiequ","vod_time":"2018-03-27 21:17:52","vod_remarks":"Super clear","vod_play_from":"youku"},{"vod_id ":19,"vod_name":"Test 3","type_id":6,"type_name":"Subclass 3","vod_en":"chaofanzhizhuxia2","vod_time":"2018-03-27 21:17 :51","vod_remarks":"HD","vod_play_from":"youku"},{"vod_id":18,"vod_name":"Test 4","type_id":6,"type_name":"Subclass 4","vod_en":"muxingshangxing","vod_time":"2018-03-27 21:17:37","vod_remarks":"HD","vod_play_from":"youku"},{"vod_id": 15,"vod_name":"Test 5","type_id":6,"type_name":"Subclass 5","vod_en":"yingxiongbense2018","vod_time":"2018-03-22 16:09:17 ","vod_remarks":"HD","vod_play_from":"qiyi,sinahd"},{"vod_id":13,"vod_name":"Test 6","type_id":8,"type_name":"Subclass 6","vod_en":"piaoxiangjianyu","vod_time":"2018 -03-21 20:37:52","vod_remarks":"All 36 episodes","vod_play_from":"youku,qiyi"},{"vod_id":14,"vod_name":"Test 7","type_id ":8,"type_name":"Subclass 7","vod_en":"guaitanzhimeiyingjinghun","vod_time":"2018-03-20 21:32:27","vod_remarks":"HD","vod_play_from" :"qiyi"}]}
+
+
+List receiving parameters:
+ac=list
+t=category ID
+pg=page number
+wd=Search keyword
+h = data in hours
+For example: http://domain/api.php/provide/vod/?ac=list&t=1&pg=5 Page 5 of list data with category ID 1
+
+
+Content data format:
+{"code":1,"msg":"Data List","page":1,"pagecount":1,"limit":"20","total":1,"list":[{"vod_id ":21,"vod_name":"Test 1","type_id":6,"type_name":"Subclass 1","vod_en":"qingjian","vod_time":"2018-03-29 20:50 :19","vod_remarks":"Super clear","vod_play_from":"youku","vod_pic":"https:\/\/localhost\/view\/photo\/s_ratio_poster\/public\/p2259384068.jpg ","vod_area":"Mainland","vod_lang":"Mandarin","vod_year":"2018","vod_serial":"0","vod_actor":"Stars","vod_director":"Director" ,"vod_content":"This is a detailed introduction","vod_play_url":"The feature $http:\/\/localhost\/v_show\/id_XMTM0NTczNDExMg==.html"}]}
+
+
+
+Content receiving parameters:
+Parameter ids=data ID, multiple IDs are separated by commas.
+     t=type ID
+     pg=page number
+     h = data in hours
+
+For example: http://domain/api.php/provide/vod/?ac=detail&ids=123,567 Get data information with IDs 123 and 567
+        http://domain/api.php/provide/vod/?ac=detail&h=24 Get the updated data information within 24 hours
+
+
+Also attach the xml return format:
+List data format:
+<?xml version="1.0" encoding="utf-8"?><rss version="5.0"><list page="1" pagecount="23" pagesize="20" recordcount="449"><video ><last>2012-05-06 13:32:28</last><id>493</id><tid>9</tid><name><![CDATA[test]]></name> <type>Subclass 1</type><dt>dplayer</dt><note><![CDATA[]]></note><vlink><![CDATA[http://localhost/vod/? 493.html]]></vlink><plink><![CDATA[http://localhost/vodplay/?493-1-1.html]]></plink></video></list>< class><ty id="1">Class 1</ty><ty id="2">Class 2</ty><ty id="3">Class 3</ty><ty id="4 ">Class 4</ty><ty id="5">Subclass 1</ty><ty id="6">Subclass 2</ty><ty id="7">Subclass 3< /ty><ty id="8">Subclass 4</ty><ty id="9">Subclass 5</ty><ty id="10">Subclass 6</ty><ty id="11">Subclass 7</ty><ty id="12">Subclass 8</ty><ty id="13">Subclass 9</ty><ty id="14" >Subclass 10</ty><ty id="15">Subclass 11</ty></class></rss>
+
+Content data format:
+<?xml version="1.0" encoding="utf-8"?><rss version="5.0"><list page="1" pagecount="1" pagesize="20" recordcount="1"><video ><last>2012-05-06 13:32:28</last><id>493</id><tid>9</tid><name><![CDATA[test1]]></name ><type>horror movie</type><pic>http://localhost/uploads/20091130205750222.JPG</pic><lang>English</lang><area>Europe and America</area><year>2012</ year><state>0</state><note><![CDATA[]]></note><type>_9</type><actor><![CDATA[]]></actor><director ><![CDATA[Ryan Schifrin]]></director><dl><dd from="qvod"><![CDATA[Episode 1$http://localhost/1.mp4|]]></ dd></dl><des><![CDATA[<p>A brief introduction. <br /></p>]]></des><vlink><![CDATA[http://localhost/vod/?493.html]]></vlink><plink><![CDATA[ http://localhost/vodplay/?493-1-1.html]]></plink></video></list></rss>
