@@ -14,14 +14,11 @@
           file="blocks/heart-table"}
         </div>
         <div class="sui-right-wrap">
-
-
-
           <!-- {maccms:type num="300"  tab="art"} -->
-          {maccms:vod num="36" paging="yes" type="current" order="desc" by="time"}
+          {maccms:vod num="36" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
           <?php
           echo '<pre>';
-          var_dump($vo);
+          var_dump($vo['vod_name']);
           echo '</pre>';
           ?>
           {/maccms:vod}
