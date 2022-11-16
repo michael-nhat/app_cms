@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:9:{s:38:"template/default/html/index/index.html";i:1666882817;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/head-tags.html";i:1666882158;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666774314;s:79:"/www/wwwroot/maccms10test2/template/default/html/blocks/script-bottom-body.html";i:1666791328;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:9:{s:38:"template/default/html/index/index.html";i:1667031563;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/head-tags.html";i:1666882158;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;s:76:"/www/wwwroot/maccms10test2/template/default/html/blocks/popular--slides.html";i:1666366068;s:71:"/www/wwwroot/maccms10test2/template/default/html/blocks/new-movies.html";i:1666620061;s:70:"/www/wwwroot/maccms10test2/template/default/html/blocks/tv-series.html";i:1666623429;s:68:"/www/wwwroot/maccms10test2/template/default/html/blocks/top-ten.html";i:1666772514;s:67:"/www/wwwroot/maccms10test2/template/default/html/blocks/footer.html";i:1666774314;s:79:"/www/wwwroot/maccms10test2/template/default/html/blocks/script-bottom-body.html";i:1666791328;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -423,9 +423,6 @@
    
         </div>
         <div class="sui-right-wrap">
-
-
-
           <!-- {maccms:type num="300"  tab="art"} -->
           <?php $__TAG__ = '{"num":"36","paging":"yes","pageurl":"vod\/show","type":"current","order":"desc","by":"time","id":"vo","key":"key"}';$__LIST__ = model("Vod")->listCacheData($__TAG__);$__PAGING__ = mac_page_param($__LIST__['total'],$__LIST__['limit'],$__LIST__['page'],$__LIST__['pageurl'],$__LIST__['half']); if(is_array($__LIST__['list']) || $__LIST__['list'] instanceof \think\Collection || $__LIST__['list'] instanceof \think\Paginator): $key = 0; $__LIST__ = $__LIST__['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($key % 2 );++$key;          echo '<pre>';
           var_dump($vo['vod_name']);
