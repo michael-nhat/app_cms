@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:40:"template/default/html/bindex/bindex.html";i:1666107709;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:40:"template/default/html/bindex/bindex.html";i:1666859137;s:64:"/www/wwwroot/maccms10test2/template/default/html/blocks/top.html";i:1666679231;}*/ ?>
 <!DOCTYPE html>
 <html>
   <head>
