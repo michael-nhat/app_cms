@@ -3,9 +3,10 @@ namespace app\index\controller;
 
 include 'Gumlet/ImageResize.php';
 include 'Gumlet/ImageResizeException.php';
+
+use Exception;
 use Gumlet\ImageResize;
 use Gumlet\ImageResizeException;
-use Exception;
 
 function getParams($xossp)
 {
@@ -25,6 +26,34 @@ function getParams($xossp)
     return $oss_params;
 }
 
+function imageCorrect($image, $background = true, $canvas_w, $canvas_h)
+{
+    if (!$background) {
+        $background = imagecolorallocate($image, 0, 0, 0);
+    }
+    $img_h = imagesy($image);
+    $img_w = imagesx($image);
+
+    // create new image (canvas) of proper aspect ratio
+    $img = imagecreatetruecolor($canvas_w, $canvas_h);
+
+    // fill the background
+    imagefill($img, 0, 0, $background);
+
+    // offset values (center the original image to new canvas)
+    $xoffset = ($canvas_w - $img_w) / 2;
+    $yoffset = ($canvas_h - $img_h) / 2;
+
+    // copy
+    // imagecopy($img, $image, $xoffset, $yoffset, $canvas_w, $canvas_h, $img_w, $img_h);
+    imagecopymerge($img, $image, $xoffset, $yoffset, 0, 0, $img_w, $img_h, 100);
+
+    // destroy old image cursor
+    //imagedestroy($image);
+    return $img; // returns a black original file area properly sized/filled
+    //return $image; // works to return the unprocessed file
+}
+
 function ossResize(ImageResize $image, $oss_params)
 {
     if (!array_key_exists('limit', $oss_params)) {
@@ -32,23 +61,25 @@ function ossResize(ImageResize $image, $oss_params)
     }
     $allow_enlarge = !filter_var($oss_params['limit'], FILTER_VALIDATE_BOOLEAN);
 
-    if (array_key_exists('m_fixed', $oss_params)) {
+    if ($oss_params['m'] == 'fill') {
         if ($oss_params['w'] and $oss_params['h']) {
-            $image->resize($oss_params['w'], $oss_params['h'], $allow_enlarge);
+            $image->resizeToBestFit($oss_params['w'], $oss_params['h'], $allow_enlarge);
+
+            $smallerImage = imagecreatefromstring($image->getImageAsString());
+            $dest_image2 = imageCorrect($smallerImage, null, $oss_params['w'], $oss_params['h']);
+
+            // header('Content-Type: image/jpeg');
+            // imagejpeg($dest_image2);
+            // imagedestroy($dest_image2);
+
+            // never work, impossible
+            $image2 = ImageResize::createFromString(base64_decode($smallerImage));
+            $image2->output();
         }
     } else {
-        if (array_key_exists('m_fill', $oss_params)) {
+        if ($oss_params['m'] == 'fixed') {
             if ($oss_params['w'] and $oss_params['h']) {
-                $image->resizeToBestFit($oss_params['w'], $oss_params['h'], $allow_enlarge);
-                if ($image->getDestHeight() == $oss_params['h']) {
-                    
-                } else {
-
-                } 
-                $image2String = $image->getImageAsString();
-                $dest_image = imagecreatetruecolor($oss_params['w'], $oss_params['h']);
-                $background = imagecolorallocate($dest_image, 255, 255, 255);
-                imagefilledrectangle($dest_image, 0, 0, $image->getDestWidth(), $image->getDestHeight(), $background);
+                $image->resize($oss_params['w'], $oss_params['h'], $allow_enlarge);
             }
         } else {
             if ($oss_params['w'] and $oss_params['h']) {
@@ -59,6 +90,22 @@ function ossResize(ImageResize $image, $oss_params)
                 $image->resizeToHeight($oss_params['h'], $allow_enlarge);
             }
         }
+        $image->output();
+    }
+}
+
+function printErrs()
+{
+    $numargs = func_num_args();
+
+    $arg_list = func_get_args();
+    for ($i = 0; $i < $numargs; $i++) {
+        echo ' errr: <pre>';
+        echo 'iii: ';
+        echo $i;
+        echo 'valll: ';
+        var_dump($arg_list[$i]);
+        echo '</pre>';
     }
 }
 
@@ -78,15 +125,12 @@ class Img extends Base
             $file_name = $params['img'];
             $filePath = __DIR__ . '/./images/' . $file_name;
             $image = new ImageResize($filePath);
-
             ossResize($image, $oss_params);
-            // print('echo: '. $image->getDestHeight(). ',' );
-            // $image->resize(90, 90);
-            // $result = $image->output();
-        } catch (ImageResizeException $e) {
-            echo ("resize error");
+        } catch (Exception $e) {
+            printErrs($e);
         }
         die();
+        // exit();
         // return;
     }
 
