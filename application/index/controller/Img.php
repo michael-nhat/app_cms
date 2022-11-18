@@ -59,6 +59,7 @@ function ossResize(ImageResize $image, $oss_params)
     if (!array_key_exists('limit', $oss_params)) {
         $oss_params['limit'] = '1';
     }
+    // convert string to text
     $allow_enlarge = !filter_var($oss_params['limit'], FILTER_VALIDATE_BOOLEAN);
 
     if ($oss_params['m'] == 'fill') {
@@ -68,13 +69,13 @@ function ossResize(ImageResize $image, $oss_params)
             $smallerImage = imagecreatefromstring($image->getImageAsString());
             $dest_image2 = imageCorrect($smallerImage, null, $oss_params['w'], $oss_params['h']);
 
-            // header('Content-Type: image/jpeg');
-            // imagejpeg($dest_image2);
-            // imagedestroy($dest_image2);
+            header('Content-Type: image/jpeg');
+            imagejpeg($dest_image2);
+            imagedestroy($dest_image2);
 
             // never work, impossible
-            $image2 = ImageResize::createFromString(base64_decode($smallerImage));
-            $image2->output();
+            // $image2 = ImageResize::createFromString(base64_decode($smallerImage));
+            // $image2->output();
         }
     } else {
         if ($oss_params['m'] == 'fixed') {
@@ -123,7 +124,9 @@ class Img extends Base
             $xossp = input()['x-oss-process'];
             $oss_params = getParams($xossp);
             $file_name = $params['img'];
-            $filePath = __DIR__ . '/./images/' . $file_name;
+            $filePath = __DIR__ . '/./images/jiangzi_tupian/' . $file_name;
+            
+            // printErrs(($filePath));
             $image = new ImageResize($filePath);
             ossResize($image, $oss_params);
         } catch (Exception $e) {
@@ -134,9 +137,4 @@ class Img extends Base
         // return;
     }
 
-    public function index2()
-    {
-        $this->assign('version', ['code' => "custom version"]);
-        return $this->label_fetch('index/index2');
-    }
 }
