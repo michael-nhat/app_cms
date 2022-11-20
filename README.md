@@ -20,4 +20,8 @@ thinkphp with template
  - more decoration for these titles
  - auto slide poster
 
-
+##### __:
+    -- make cutted picture folder, everytime crop picture, save it 's name and filetime
+    -- everytime need crop, get the filename+filetime, check it exist? if true return, if false make it step 1 and return it
+    -- write nginx to replace real url pic9.....
+    -- write not-thinkphp app and bring the module to it (guzzal)
